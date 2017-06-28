@@ -3,6 +3,7 @@ defmodule PhoenixUeberauthGuardian.UserSocket do
 
   ## Channels
   # channel "room:*", PhoenixUeberauthGuardian.RoomChannel
+  channel "authorized:*", PhoenixUeberauthGuardian.AuthorizedChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

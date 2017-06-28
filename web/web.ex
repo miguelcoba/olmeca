@@ -26,15 +26,37 @@ defmodule PhoenixUeberauthGuardian.Web do
     end
   end
 
-  def controller do
+  def admin_controller do
     quote do
-      use Phoenix.Controller
+      use Phoenix.Controller, namespace: PhoenixUeberauthGuardian.Admin
+      use Guardian.Phoenix.Controller, key: :admin
 
       alias PhoenixUeberauthGuardian.Repo
+      alias Guardian.Plug.EnsureAuthenticated
+      alias Guardian.Plug.EnsurePermissions
+
       import Ecto
       import Ecto.Query
 
       import PhoenixUeberauthGuardian.Router.Helpers
+      import PhoenixUeberauthGuardian.Controller.Helpers
+    end
+  end
+
+  def controller do
+    quote do
+      use Phoenix.Controller
+      use Guardian.Phoenix.Controller
+
+      alias PhoenixUeberauthGuardian.Repo
+      alias Guardian.Plug.EnsureAuthenticated
+      alias Guardian.Plug.EnsurePermissions
+
+      import Ecto
+      import Ecto.Query
+
+      import PhoenixUeberauthGuardian.Router.Helpers
+      import PhoenixUeberauthGuardian.Controller.Helpers
       import PhoenixUeberauthGuardian.Gettext
     end
   end
@@ -50,6 +72,7 @@ defmodule PhoenixUeberauthGuardian.Web do
       use Phoenix.HTML
 
       import PhoenixUeberauthGuardian.Router.Helpers
+      import PhoenixUeberauthGuardian.ViewHelpers
       import PhoenixUeberauthGuardian.ErrorHelpers
       import PhoenixUeberauthGuardian.Gettext
     end

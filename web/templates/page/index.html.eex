@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}", name: "Phoenix!" %></h2>
+  <h2><%= gettext "Welcome to %{name}", name: "PhoenixUeberauthGuardian!" %></h2>
   <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
 </div>
 
@@ -8,13 +8,13 @@
     <h4>Resources</h4>
     <ul>
       <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
+        <a href="#"></a>
       </li>
       <li>
-        <a href="https://hexdocs.pm/phoenix">Docs</a>
+        <a href=""></a>
       </li>
       <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
+        <a href=""></a>
       </li>
     </ul>
   </div>
@@ -23,13 +23,13 @@
     <h4>Help</h4>
     <ul>
       <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
+        <a href=""></a>
       </li>
       <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
+        <a href=""></a>
       </li>
       <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
+        <a href=""></a>
       </li>
     </ul>
   </div>
