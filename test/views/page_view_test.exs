@@ -1,3 +1,3 @@
-defmodule PhoenixUeberauthGuardian.PageViewTest do
-  use PhoenixUeberauthGuardian.ConnCase, async: true
+defmodule Olmeca.PageViewTest do
+  use Olmeca.ConnCase, async: true
 end

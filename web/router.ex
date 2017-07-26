@@ -1,5 +1,5 @@
-defmodule PhoenixUeberauthGuardian.Router do
-  use PhoenixUeberauthGuardian.Web, :router
+defmodule Olmeca.Router do
+  use Olmeca.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -47,7 +47,7 @@ defmodule PhoenixUeberauthGuardian.Router do
     plug Guardian.Plug.LoadResource
   end
 
-  scope "/", PhoenixUeberauthGuardian do
+  scope "/", Olmeca do
     # We pipe this through the browser_auth to fetch logged in people
     # We pipe this through the impersonation_browser_auth to know if we're impersonating
     # We don't just pipe it through admin_browser_auth because that also loads the resource
@@ -64,7 +64,7 @@ defmodule PhoenixUeberauthGuardian.Router do
   end
 
    # This scope is the main authentication area for Ueberauth
-  scope "/auth", PhoenixUeberauthGuardian do
+  scope "/auth", Olmeca do
     pipe_through [:browser, :browser_auth] # Use the default browser stack
 
     get "/:identity", AuthController, :login
@@ -74,7 +74,7 @@ defmodule PhoenixUeberauthGuardian.Router do
 
   # This scope is intended for admin users.
   # Normal users can only go to the login page
-  scope "/admin", PhoenixUeberauthGuardian.Admin, as: :admin do
+  scope "/admin", Olmeca.Admin, as: :admin do
     pipe_through [:browser, :admin_browser_auth] # Use the default browser stack
 
     get "/login", SessionController, :new, as: :login
@@ -89,7 +89,7 @@ defmodule PhoenixUeberauthGuardian.Router do
   end
 
   # Other scopes may use custom stacks.
-  scope "/api", PhoenixUeberauthGuardian do
+  scope "/api", Olmeca do
     pipe_through [:api, :api_auth]
   end
 end

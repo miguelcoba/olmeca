@@ -1,14 +1,14 @@
-defmodule PhoenixUeberauthGuardian.Endpoint do
-  use Phoenix.Endpoint, otp_app: :phoenix_ueberauth_guardian
+defmodule Olmeca.Endpoint do
+  use Phoenix.Endpoint, otp_app: :olmeca
 
-  socket "/socket", PhoenixUeberauthGuardian.UserSocket
+  socket "/socket", Olmeca.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :phoenix_ueberauth_guardian, gzip: false,
+    at: "/", from: :olmeca, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -35,8 +35,8 @@ defmodule PhoenixUeberauthGuardian.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_phoenix_ueberauth_guardian_key",
+    key: "_olmeca_key",
     signing_salt: "6/xYrwn5"
 
-  plug PhoenixUeberauthGuardian.Router
+  plug Olmeca.Router
 end

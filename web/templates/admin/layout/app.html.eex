@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello PhoenixUeberauthGuardian!</title>
+    <title>Hello Olmeca!</title>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
@@ -21,7 +21,7 @@
           </ul>
         </nav>
         <span class="logo"></span>
-        <h1>PhoenixUeberauthGuardian - Admin</h1>
+        <h1>Olmeca - Admin</h1>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>

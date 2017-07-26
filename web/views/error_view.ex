@@ -1,5 +1,5 @@
-defmodule PhoenixUeberauthGuardian.ErrorView do
-  use PhoenixUeberauthGuardian.Web, :view
+defmodule Olmeca.ErrorView do
+  use Olmeca.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

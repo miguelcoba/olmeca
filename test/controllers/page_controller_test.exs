@@ -1,5 +1,5 @@
-defmodule PhoenixUeberauthGuardian.PageControllerTest do
-  use PhoenixUeberauthGuardian.ConnCase
+defmodule Olmeca.PageControllerTest do
+  use Olmeca.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

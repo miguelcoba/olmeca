@@ -1,12 +1,12 @@
-defmodule PhoenixUeberauthGuardian.Web do
+defmodule Olmeca.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use PhoenixUeberauthGuardian.Web, :controller
-      use PhoenixUeberauthGuardian.Web, :view
+      use Olmeca.Web, :controller
+      use Olmeca.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -28,18 +28,18 @@ defmodule PhoenixUeberauthGuardian.Web do
 
   def admin_controller do
     quote do
-      use Phoenix.Controller, namespace: PhoenixUeberauthGuardian.Admin
+      use Phoenix.Controller, namespace: Olmeca.Admin
       use Guardian.Phoenix.Controller, key: :admin
 
-      alias PhoenixUeberauthGuardian.Repo
+      alias Olmeca.Repo
       alias Guardian.Plug.EnsureAuthenticated
       alias Guardian.Plug.EnsurePermissions
 
       import Ecto
       import Ecto.Query
 
-      import PhoenixUeberauthGuardian.Router.Helpers
-      import PhoenixUeberauthGuardian.Controller.Helpers
+      import Olmeca.Router.Helpers
+      import Olmeca.Controller.Helpers
     end
   end
 
@@ -48,16 +48,16 @@ defmodule PhoenixUeberauthGuardian.Web do
       use Phoenix.Controller
       use Guardian.Phoenix.Controller
 
-      alias PhoenixUeberauthGuardian.Repo
+      alias Olmeca.Repo
       alias Guardian.Plug.EnsureAuthenticated
       alias Guardian.Plug.EnsurePermissions
 
       import Ecto
       import Ecto.Query
 
-      import PhoenixUeberauthGuardian.Router.Helpers
-      import PhoenixUeberauthGuardian.Controller.Helpers
-      import PhoenixUeberauthGuardian.Gettext
+      import Olmeca.Router.Helpers
+      import Olmeca.Controller.Helpers
+      import Olmeca.Gettext
     end
   end
 
@@ -71,10 +71,10 @@ defmodule PhoenixUeberauthGuardian.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import PhoenixUeberauthGuardian.Router.Helpers
-      import PhoenixUeberauthGuardian.ViewHelpers
-      import PhoenixUeberauthGuardian.ErrorHelpers
-      import PhoenixUeberauthGuardian.Gettext
+      import Olmeca.Router.Helpers
+      import Olmeca.ViewHelpers
+      import Olmeca.ErrorHelpers
+      import Olmeca.Gettext
     end
   end
 
@@ -88,10 +88,10 @@ defmodule PhoenixUeberauthGuardian.Web do
     quote do
       use Phoenix.Channel
 
-      alias PhoenixUeberauthGuardian.Repo
+      alias Olmeca.Repo
       import Ecto
       import Ecto.Query
-      import PhoenixUeberauthGuardian.Gettext
+      import Olmeca.Gettext
     end
   end
 

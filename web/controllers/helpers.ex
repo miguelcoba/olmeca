@@ -1,4 +1,4 @@
-defmodule PhoenixUeberauthGuardian.Controller.Helpers do
+defmodule Olmeca.Controller.Helpers do
   import Plug.Conn
 
   def redirect_back(conn, alternative \\ "/") do

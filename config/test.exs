@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :phoenix_ueberauth_guardian, PhoenixUeberauthGuardian.Endpoint,
+config :olmeca, Olmeca.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -10,10 +10,10 @@ config :phoenix_ueberauth_guardian, PhoenixUeberauthGuardian.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :phoenix_ueberauth_guardian, PhoenixUeberauthGuardian.Repo,
+config :olmeca, Olmeca.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "phoenix_ueberauth_guardian_test",
+  database: "olmeca_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

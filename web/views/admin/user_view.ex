@@ -1,3 +1,3 @@
-defmodule PhoenixUeberauthGuardian.Admin.UserView do
-  use PhoenixUeberauthGuardian.Web, :view
+defmodule Olmeca.Admin.UserView do
+  use Olmeca.Web, :view
 end

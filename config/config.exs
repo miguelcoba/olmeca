@@ -6,15 +6,15 @@
 use Mix.Config
 
 # General application configuration
-config :phoenix_ueberauth_guardian,
-  ecto_repos: [PhoenixUeberauthGuardian.Repo]
+config :olmeca,
+  ecto_repos: [Olmeca.Repo]
 
 # Configures the endpoint
-config :phoenix_ueberauth_guardian, PhoenixUeberauthGuardian.Endpoint,
+config :olmeca, Olmeca.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "xJPCRpLvXaPnJIb+C+ZBkOt5TD7xwKPLth7J9yE4cGmjlqnf66sP58dNNYdMCvgh",
-  render_errors: [view: PhoenixUeberauthGuardian.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: PhoenixUeberauthGuardian.PubSub,
+  render_errors: [view: Olmeca.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Olmeca.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
@@ -38,10 +38,10 @@ config :ueberauth, Ueberauth.Strategy.Slack.OAuth,
   client_secret: System.get_env("SLACK_CLIENT_SECRET")
 
 config :guardian, Guardian,
-  issuer: "PhoenixUeberauthGuardian.#{Mix.env}",
+  issuer: "Olmeca.#{Mix.env}",
   ttl: {30, :days},
   verify_issuer: true,
-  serializer: PhoenixUeberauthGuardian.GuardianSerializer,
+  serializer: Olmeca.GuardianSerializer,
   secret_key: to_string(Mix.env),
   hooks: GuardianDb,
   permissions: %{
@@ -54,7 +54,7 @@ config :guardian, Guardian,
   }
 
 config :guardian_db, GuardianDb,
-       repo: PhoenixUeberauthGuardian.Repo,
+       repo: Olmeca.Repo,
        sweep_interval: 60 # 60 mins
 
 # Import environment specific config. This must remain at the bottom

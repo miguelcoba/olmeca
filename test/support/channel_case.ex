@@ -1,4 +1,4 @@
-defmodule PhoenixUeberauthGuardian.ChannelCase do
+defmodule Olmeca.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -20,22 +20,22 @@ defmodule PhoenixUeberauthGuardian.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias PhoenixUeberauthGuardian.Repo
+      alias Olmeca.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
 
       # The default endpoint for testing
-      @endpoint PhoenixUeberauthGuardian.Endpoint
+      @endpoint Olmeca.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PhoenixUeberauthGuardian.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Olmeca.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PhoenixUeberauthGuardian.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Olmeca.Repo, {:shared, self()})
     end
 
     :ok

@@ -1,4 +1,4 @@
-defmodule PhoenixUeberauthGuardian.Repo.Migrations.CreateUser do
+defmodule Olmeca.Repo.Migrations.CreateUser do
   use Ecto.Migration
 
   def change do

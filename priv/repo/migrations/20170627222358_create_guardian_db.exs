@@ -1,4 +1,4 @@
-defmodule PhoenixUeberauthGuardian.Repo.Migrations.CreateGuardianDb do
+defmodule Olmeca.Repo.Migrations.CreateGuardianDb do
   use Ecto.Migration
 
   def change do

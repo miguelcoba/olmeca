@@ -1,4 +1,4 @@
-defmodule PhoenixUeberauthGuardian.ModelCase do
+defmodule Olmeca.ModelCase do
   @moduledoc """
   This module defines the test case to be used by
   model tests.
@@ -16,20 +16,20 @@ defmodule PhoenixUeberauthGuardian.ModelCase do
 
   using do
     quote do
-      alias PhoenixUeberauthGuardian.Repo
+      alias Olmeca.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import PhoenixUeberauthGuardian.ModelCase
+      import Olmeca.ModelCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PhoenixUeberauthGuardian.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Olmeca.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PhoenixUeberauthGuardian.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Olmeca.Repo, {:shared, self()})
     end
 
     :ok
@@ -59,7 +59,7 @@ defmodule PhoenixUeberauthGuardian.ModelCase do
   """
   def errors_on(struct, data) do
     struct.__struct__.changeset(struct, data)
-    |> Ecto.Changeset.traverse_errors(&PhoenixUeberauthGuardian.ErrorHelpers.translate_error/1)
+    |> Ecto.Changeset.traverse_errors(&Olmeca.ErrorHelpers.translate_error/1)
     |> Enum.flat_map(fn {key, errors} -> for msg <- errors, do: {key, msg} end)
   end
 end

@@ -1,4 +1,4 @@
-# PhoenixUeberauthGuardian
+# Olmeca
 
 To start your Phoenix app:
 

@@ -1,8 +1,8 @@
-defmodule PhoenixUeberauthGuardian.GuardianToken do
-  use PhoenixUeberauthGuardian.Web, :model
+defmodule Olmeca.GuardianToken do
+  use Olmeca.Web, :model
 
-  alias PhoenixUeberauthGuardian.Repo
-  alias PhoenixUeberauthGuardian.GuardianSerializer
+  alias Olmeca.Repo
+  alias Olmeca.GuardianSerializer
 
   @primary_key {:jti, :string, []}
   @derive {Phoenix.Param, key: :jti}
@@ -20,7 +20,7 @@ defmodule PhoenixUeberauthGuardian.GuardianToken do
   def for_user(user) do
     case GuardianSerializer.for_token(user) do
       {:ok, aud} ->
-        (from t in PhoenixUeberauthGuardian.GuardianToken, where: t.sub == ^aud)
+        (from t in Olmeca.GuardianToken, where: t.sub == ^aud)
           |> Repo.all
       _ -> []
     end

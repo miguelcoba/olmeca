@@ -1,7 +1,7 @@
-defmodule PhoenixUeberauthGuardian.TokenController do
-  use PhoenixUeberauthGuardian.Web, :controller
+defmodule Olmeca.TokenController do
+  use Olmeca.Web, :controller
 
-  alias PhoenixUeberauthGuardian.GuardianToken
+  alias Olmeca.GuardianToken
   alias Guardian.Plug.EnsureAuthenticated
   alias Guardian.Plug.EnsurePermissions
 
@@ -23,7 +23,7 @@ defmodule PhoenixUeberauthGuardian.TokenController do
       token ->
         case Repo.delete(token) do
           {:ok, _} ->
-            {:ok, sub} = PhoenixUeberauthGuardian.GuardianSerializer.for_token(current_user)
+            {:ok, sub} = Olmeca.GuardianSerializer.for_token(current_user)
             if sub == token.sub do
               conn
               |> put_flash(:info, "Done")

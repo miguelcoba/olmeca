@@ -1,9 +1,9 @@
-defmodule PhoenixUeberauthGuardian.PrivatePageController do
+defmodule Olmeca.PrivatePageController do
   @moduledoc """
   This controller _must_ have a valid JWT of type "token".
   These are only granted when logging in via the browser.
   """
-  use PhoenixUeberauthGuardian.Web, :controller
+  use Olmeca.Web, :controller
 
   plug Guardian.Plug.EnsureAuthenticated, handler: __MODULE__, typ: "access"
 

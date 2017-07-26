@@ -1,14 +1,14 @@
-defmodule PhoenixUeberauthGuardian.Admin.SessionController do
+defmodule Olmeca.Admin.SessionController do
   @moduledoc """
   Provides login and logout for the admin part of the site.
   We keep the logins seperate rather than use a permission for this because keeping the tokens in
   separate locations allows us to more easily manage the different requirements between the
   normal site and the admin site
   """
-  use PhoenixUeberauthGuardian.Web, :admin_controller
+  use Olmeca.Web, :admin_controller
 
-  alias PhoenixUeberauthGuardian.UserFromAuth
-  alias PhoenixUeberauthGuardian.User
+  alias Olmeca.UserFromAuth
+  alias Olmeca.User
 
   # We still want to use Ueberauth for checking the passwords etc
   # we have everything we need to check email / passwords and oauth already
@@ -16,7 +16,7 @@ defmodule PhoenixUeberauthGuardian.Admin.SessionController do
   plug Ueberauth, base_path: "/admin/auth", providers: [:identity]
 
   # Make sure that we have a valid token in the :admin area of the session
-  # We've aliased Guardian.Plug.EnsureAuthenticated in our PhoenixUeberauthGuardian.Web.admin_controller macro
+  # We've aliased Guardian.Plug.EnsureAuthenticated in our Olmeca.Web.admin_controller macro
   plug EnsureAuthenticated, [key: :admin, handler: __MODULE__] when action in [:delete, :impersonate, :stop_impersonating]
 
   def new(conn, _params, current_user, _claims) do

@@ -1,7 +1,7 @@
-defmodule PhoenixUeberauthGuardian.AuthorizationController do
-  use PhoenixUeberauthGuardian.Web, :controller
+defmodule Olmeca.AuthorizationController do
+  use Olmeca.Web, :controller
 
-  alias PhoenixUeberauthGuardian.Repo
+  alias Olmeca.Repo
 
   def index(conn, _params, current_user, _claims) do
     render conn, "index.html", current_user: current_user, authorizations: authorizations(current_user)

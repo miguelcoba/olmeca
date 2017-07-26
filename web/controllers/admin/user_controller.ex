@@ -1,10 +1,10 @@
-defmodule PhoenixUeberauthGuardian.Admin.UserController do
-  use PhoenixUeberauthGuardian.Web, :admin_controller
+defmodule Olmeca.Admin.UserController do
+  use Olmeca.Web, :admin_controller
 
-  alias PhoenixUeberauthGuardian.User
+  alias Olmeca.User
 
   # Make sure that we have a valid token in the :admin area of the session
-  # We've aliased Guardian.Plug.EnsureAuthenticated in our PhoenixUeberauthGuardian.Web.admin_controller macro
+  # We've aliased Guardian.Plug.EnsureAuthenticated in our Olmeca.Web.admin_controller macro
   plug EnsureAuthenticated, handler: __MODULE__, key: :admin
 
   def index(conn, _params, current_user, _claims) do

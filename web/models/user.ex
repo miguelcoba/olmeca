@@ -1,14 +1,14 @@
-defmodule PhoenixUeberauthGuardian.User do
-	use PhoenixUeberauthGuardian.Web, :model
+defmodule Olmeca.User do
+	use Olmeca.Web, :model
 
-	alias PhoenixUeberauthGuardian.Repo
+	alias Olmeca.Repo
 
   schema "users" do
     field :name, :string
     field :email, :string
     field :is_admin, :boolean
 
-    has_many :authorizations, PhoenixUeberauthGuardian.Authorization
+    has_many :authorizations, Olmeca.Authorization
 
     timestamps()
   end

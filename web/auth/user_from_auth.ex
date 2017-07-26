@@ -1,6 +1,6 @@
-defmodule PhoenixUeberauthGuardian.UserFromAuth do
-  alias PhoenixUeberauthGuardian.User
-  alias PhoenixUeberauthGuardian.Authorization
+defmodule Olmeca.UserFromAuth do
+  alias Olmeca.User
+  alias Olmeca.Authorization
   alias Ueberauth.Auth
 
   def get_or_insert(auth, current_user, repo) do

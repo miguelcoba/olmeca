@@ -1,8 +1,8 @@
-defmodule PhoenixUeberauthGuardian.GuardianSerializer do
+defmodule Olmeca.GuardianSerializer do
   @behaviour Guardian.Serializer
 
-  alias PhoenixUeberauthGuardian.Repo
-  alias PhoenixUeberauthGuardian.User
+  alias Olmeca.Repo
+  alias Olmeca.User
 
   def for_token(user = %User{}), do: { :ok, "User:#{user.id}" }
   def for_token(_), do: { :error, "Unknown resource type" }

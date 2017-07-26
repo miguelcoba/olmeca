@@ -1,4 +1,4 @@
 ExUnit.start
 
-Ecto.Adapters.SQL.Sandbox.mode(PhoenixUeberauthGuardian.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(Olmeca.Repo, :manual)
 

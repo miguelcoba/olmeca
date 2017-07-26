@@ -1,4 +1,4 @@
-defmodule PhoenixUeberauthGuardian.ErrorHelpers do
+defmodule Olmeca.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule PhoenixUeberauthGuardian.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(PhoenixUeberauthGuardian.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(Olmeca.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(PhoenixUeberauthGuardian.Gettext, "errors", msg, opts)
+      Gettext.dgettext(Olmeca.Gettext, "errors", msg, opts)
     end
   end
 end

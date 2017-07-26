@@ -1,12 +1,12 @@
-defmodule PhoenixUeberauthGuardian.AuthController do
+defmodule Olmeca.AuthController do
   @moduledoc """
   Handles the Überauth integration.
   This controller implements the request and callback phases for all providers.
   The actual creation and lookup of users/authorizations is handled by UserFromAuth
   """
-  use PhoenixUeberauthGuardian.Web, :controller
+  use Olmeca.Web, :controller
 
-  alias PhoenixUeberauthGuardian.UserFromAuth
+  alias Olmeca.UserFromAuth
 
   plug Ueberauth
 
@@ -52,7 +52,7 @@ defmodule PhoenixUeberauthGuardian.AuthController do
   end
 
   defp auths(nil), do: []
-  defp auths(%PhoenixUeberauthGuardian.User{} = user) do
+  defp auths(%Olmeca.User{} = user) do
     Ecto.assoc(user, :authorizations)
       |> Repo.all
       |> Enum.map(&(&1.provider))

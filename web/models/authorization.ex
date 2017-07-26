@@ -1,5 +1,5 @@
-defmodule PhoenixUeberauthGuardian.Authorization do
-  use PhoenixUeberauthGuardian.Web, :model
+defmodule Olmeca.Authorization do
+  use Olmeca.Web, :model
 
   schema "authorizations" do
     field :provider, :string
@@ -10,7 +10,7 @@ defmodule PhoenixUeberauthGuardian.Authorization do
     field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
 
-    belongs_to :user, PhoenixUeberauthGuardian.User
+    belongs_to :user, Olmeca.User
 
     timestamps()
   end

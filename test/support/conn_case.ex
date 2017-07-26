@@ -1,4 +1,4 @@
-defmodule PhoenixUeberauthGuardian.ConnCase do
+defmodule Olmeca.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,23 +20,23 @@ defmodule PhoenixUeberauthGuardian.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias PhoenixUeberauthGuardian.Repo
+      alias Olmeca.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
-      import PhoenixUeberauthGuardian.Router.Helpers
+      import Olmeca.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint PhoenixUeberauthGuardian.Endpoint
+      @endpoint Olmeca.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PhoenixUeberauthGuardian.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Olmeca.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PhoenixUeberauthGuardian.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Olmeca.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

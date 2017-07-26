@@ -1,3 +1,3 @@
-defmodule PhoenixUeberauthGuardian.PageView do
-  use PhoenixUeberauthGuardian.Web, :view
+defmodule Olmeca.PageView do
+  use Olmeca.Web, :view
 end

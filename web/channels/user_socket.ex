@@ -1,9 +1,9 @@
-defmodule PhoenixUeberauthGuardian.UserSocket do
+defmodule Olmeca.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", PhoenixUeberauthGuardian.RoomChannel
-  channel "authorized:*", PhoenixUeberauthGuardian.AuthorizedChannel
+  # channel "room:*", Olmeca.RoomChannel
+  channel "authorized:*", Olmeca.AuthorizedChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
@@ -31,7 +31,7 @@ defmodule PhoenixUeberauthGuardian.UserSocket do
   # Would allow you to broadcast a "disconnect" event and terminate
   # all active sockets and channels for a given user:
   #
-  #     PhoenixUeberauthGuardian.Endpoint.broadcast("users_socket:#{user.id}", "disconnect", %{})
+  #     Olmeca.Endpoint.broadcast("users_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
   def id(_socket), do: nil

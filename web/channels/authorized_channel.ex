@@ -1,5 +1,5 @@
-defmodule PhoenixUeberauthGuardian.AuthorizedChannel do
-  use PhoenixUeberauthGuardian.Web, :channel
+defmodule Olmeca.AuthorizedChannel do
+  use Olmeca.Web, :channel
   use Guardian.Channel
 
   intercept ["shout"]
