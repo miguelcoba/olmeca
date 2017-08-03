@@ -4,12 +4,12 @@ defmodule Olmeca.AuthorizedChannel do
 
   intercept ["shout"]
 
-  def join("authorized:lobby", %{claims: _claim, resource: resource}, socket) do
+  def join("authorized", %{claims: _claim, resource: resource}, socket) do
     {:ok, %{message: "Welcome #{resource.name}"}, socket}
   end
 
   # Deny joining the channel if the user isn't authenticated
-  def join("authorized:lobby", _, _socket) do
+  def join("authorized", _, _socket) do
     {:error, %{error: "not authorized, are you logged in?"}}
   end
 

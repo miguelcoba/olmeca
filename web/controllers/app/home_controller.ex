@@ -1,11 +1,7 @@
-defmodule Olmeca.PrivatePageController do
-  @moduledoc """
-  This controller _must_ have a valid JWT of type "token".
-  These are only granted when logging in via the browser.
-  """
-  use Olmeca.Web, :controller
+defmodule Olmeca.App.HomeController do
+  use Olmeca.Web, :app_controller
 
-  plug Guardian.Plug.EnsureAuthenticated, handler: __MODULE__, typ: "access"
+  plug EnsureAuthenticated, handler: __MODULE__, typ: "access"
 
   def index(conn, _params, current_user, _claims) do
     render conn, "index.html", current_user: current_user

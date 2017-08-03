@@ -43,6 +43,23 @@ defmodule Olmeca.Web do
     end
   end
 
+    def app_controller do
+    quote do
+      use Phoenix.Controller, namespace: Olmeca.App
+      use Guardian.Phoenix.Controller, key: :app
+
+      alias Olmeca.Repo
+      alias Guardian.Plug.EnsureAuthenticated
+      alias Guardian.Plug.EnsurePermissions
+
+      import Ecto
+      import Ecto.Query
+
+      import Olmeca.Router.Helpers
+      import Olmeca.Controller.Helpers
+    end
+  end
+
   def controller do
     quote do
       use Phoenix.Controller

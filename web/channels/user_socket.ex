@@ -3,7 +3,7 @@ defmodule Olmeca.UserSocket do
 
   ## Channels
   # channel "room:*", Olmeca.RoomChannel
-  channel "authorized:*", Olmeca.AuthorizedChannel
+  channel "authorized", Olmeca.AuthorizedChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

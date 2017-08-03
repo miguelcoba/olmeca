@@ -18,14 +18,4 @@ import "phoenix_html"
 // Local files can be imported directly using relative
 // paths "./socket" or full ones "web/static/js/socket".
 
-import sendMessage from "./authorized_socket";
-
-window.sendMessage = sendMessage;
-
-import Elm from './elm';
-
-const elmDiv = document.querySelector('#elm_target');
-
-if (elmDiv) {
-  Elm.Main.embed(elmDiv);
-}
+import "./main"

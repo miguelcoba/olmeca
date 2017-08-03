@@ -59,8 +59,6 @@ defmodule Olmeca.Router do
     resources "/users", UserController
     resources "/authorizations", AuthorizationController
     resources "/tokens", TokenController
-
-    get "/private", PrivatePageController, :index
   end
 
    # This scope is the main authentication area for Ueberauth
@@ -86,6 +84,14 @@ defmodule Olmeca.Router do
     delete "/impersonate", SessionController, :stop_impersonating
 
     resources "/users", UserController
+  end
+
+  # This scope is intended for secure app.
+  # Normal users can only go to the login page
+  scope "/app", Olmeca.App, as: :app do
+    pipe_through [:browser, :browser_auth] # Use the default browser stack
+
+    get "/", HomeController, :index
   end
 
   # Other scopes may use custom stacks.

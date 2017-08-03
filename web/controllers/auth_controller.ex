@@ -26,7 +26,7 @@ defmodule Olmeca.AuthController do
         conn
         |> put_flash(:info, "Signed in as #{user.name}")
         |> Guardian.Plug.sign_in(user, :access, perms: %{default: Guardian.Permissions.max})
-        |> redirect(to: private_page_path(conn, :index))
+        |> redirect(to: app_home_path(conn, :index))
       {:error, reason} ->
         conn
         |> put_flash(:error, "Could not authenticate. Error: #{reason}")

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="guardian_token" content="<%= Guardian.Plug.current_token(@conn) %>">
+    <meta name="socket_url" content="<%= socket_url() %>">
+
+    <title>Hello Olmeca!</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+    <div class="container">
+
+      <%= render @view_module, @view_template, assigns %>
+
+    </div> <!-- /container -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>
