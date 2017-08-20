@@ -25,10 +25,10 @@ defmodule Olmeca.ConnCase do
       import Ecto.Changeset
       import Ecto.Query
 
-      import Olmeca.Router.Helpers
+      import OlmecaWeb.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Olmeca.Endpoint
+      @endpoint OlmecaWeb.Endpoint
     end
   end
 

@@ -1,3 +1,3 @@
 defmodule Olmeca.PageViewTest do
-  use Olmeca.ConnCase, async: true
+  use OlmecaWeb.ConnCase, async: true
 end

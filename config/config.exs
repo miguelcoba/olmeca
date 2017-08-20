@@ -10,10 +10,10 @@ config :olmeca,
   ecto_repos: [Olmeca.Repo]
 
 # Configures the endpoint
-config :olmeca, Olmeca.Endpoint,
+config :olmeca, OlmecaWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "xJPCRpLvXaPnJIb+C+ZBkOt5TD7xwKPLth7J9yE4cGmjlqnf66sP58dNNYdMCvgh",
-  render_errors: [view: Olmeca.ErrorView, accepts: ~w(html json)],
+  render_errors: [view: OlmecaWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Olmeca.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
@@ -41,7 +41,7 @@ config :guardian, Guardian,
   issuer: "Olmeca.#{Mix.env}",
   ttl: {30, :days},
   verify_issuer: true,
-  serializer: Olmeca.GuardianSerializer,
+  serializer: OlmecaWeb.GuardianSerializer,
   secret_key: to_string(Mix.env),
   hooks: GuardianDb,
   permissions: %{

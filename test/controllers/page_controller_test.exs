@@ -1,5 +1,5 @@
 defmodule Olmeca.PageControllerTest do
-  use Olmeca.ConnCase
+  use OlmecaWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

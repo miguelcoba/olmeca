@@ -27,7 +27,7 @@ defmodule Olmeca.ChannelCase do
 
 
       # The default endpoint for testing
-      @endpoint Olmeca.Endpoint
+      @endpoint OlmecaWeb.Endpoint
     end
   end
 
