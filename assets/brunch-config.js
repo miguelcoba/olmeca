@@ -56,6 +56,7 @@ exports.config = {
       mainModules: ['elm/Main.elm'],
       outputFolder: "js",
       outputFile: "elm.js",
+      executablePath: "./node_modules/.bin",
       makeParameters: ['--debug']
      }
   },
